@@ -1,20 +1,13 @@
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
-        </div>
+{% extends 'blog/base.html' %}
 
-        <!-- inserisco il dato passato -->
-        {% for post in posts %}
-            <div>
-                <p>pubblicato: {{ post.data_pubblicazione }}</p>
-                <h1><a href="">{{ post.titolo }}</a></h1>
-                <!-- linebreaks trasforma i rimandi a capo in paragrafi -->
-                <p>{{ post.testo|linebreaks }}</p>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.data_pubblicazione }}
             </div>
-        {% endfor %}
-    </body>
-</html>
+            <h1><a href="">{{ post.titolo }}</a></h1>
+            <p>{{ post.testo|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
