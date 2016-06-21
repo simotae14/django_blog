@@ -14,8 +14,8 @@ class Post(models.Model):
     data_pubblicazione = models.DateTimeField(blank=True, null=True)
 
     # metodo pubblica
-    def pubblica(self):
-        self.data_pubblicazione = timezone.now
+    def publish(self):
+        self.data_pubblicazione = timezone.now()
         self.save()
 
     # metodo toString
