@@ -7,6 +7,10 @@
                 {{ post.data_pubblicazione }}
             </div>
         {% endif %}
+        <!-- aggiungo il link alla modifica del post -->
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
         <h1>{{ post.titolo }}</h1>
         <p>{{ post.testo|linebreaks }}</p>
     </div>

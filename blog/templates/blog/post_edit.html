@@ -1,0 +1,16 @@
+<!-- estende il template base -->
+{% extends 'blog/base.html' %}
+
+<!-- creo il blocco del contenuto -->
+{% block content %}
+    <h1>New Post</h1>
+    <!-- creo il form -->
+    <form method="POST" class="post-form">
+        <!-- rendiamo il nostro form sicuro -->
+        {% csrf_token %}
+        <!-- rendiamo il form visibile -->
+        {{ form.as_p }}
+        <!-- bottone di salvataggio -->
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
