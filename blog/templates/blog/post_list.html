@@ -2,15 +2,19 @@
 
 {% block content %}
     {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.data_pubblicazione }}
+        <div class="card">
+            <div class="card-content">
+            	<span class="card-title grey-text text-darken-4">
+                    <!-- aggiungo il link alla pagina di dettaglio -->
+                    <a href="{% url 'post_detail' pk=post.pk %}">{{ post.titolo }}</a>
+                </span>
+                <p class="date">{{ post.data_pubblicazione }}</p>
+                <p>
+                    {{ post.testo|linebreaks }}
+                </p>
             </div>
-            <h1>
-                <!-- aggiungo il link alla pagina di dettaglio -->
-                <a href="{% url 'post_detail' pk=post.pk %}">{{ post.titolo }}</a>
-            </h1>
-            <p>{{ post.testo|linebreaks }}</p>
+            
         </div>
+        
     {% endfor %}
 {% endblock content %}
