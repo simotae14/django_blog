@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # aggiungo la mia applicazione blog appena creata
     'blog',
+    # aggiungo l'applicazione traduzione
+    'traduzione',
 ]
 
 MIDDLEWARE_CLASSES = [
