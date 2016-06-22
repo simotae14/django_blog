@@ -6,7 +6,10 @@
             <div class="date">
                 {{ post.data_pubblicazione }}
             </div>
-            <h1><a href="">{{ post.titolo }}</a></h1>
+            <h1>
+                <!-- aggiungo il link alla pagina di dettaglio -->
+                <a href="{% url 'post_detail' pk=post.pk %}">{{ post.titolo }}</a>
+            </h1>
             <p>{{ post.testo|linebreaks }}</p>
         </div>
     {% endfor %}
