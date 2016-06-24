@@ -1,0 +1,19 @@
+{% extends 'traduzione/layout.html' %}
+
+{% block content %}
+    <form action="/translate/" class="col s12 post-form" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">search</i>
+                {{ form }}
+            </div>
+            <!-- bottone di salvataggio -->
+            <div class="input-field col s6">
+                <button class="btn waves-effect waves-light" type="submit">Traduci
+                    <i class="material-icons right">send</i>
+                </button>   
+            </div>
+        </div>
+    </form>
+{% endblock content %}

@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # aggiungo la mia applicazione blog appena creata
-    'blog',
+    #'blog',
     # aggiungo l'applicazione traduzione
     'traduzione',
+    'restembed.core',
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,3 +128,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # aggiungo anche la root statica
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Template directory setting
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__), 'templates'),
+)
+
+YANDEX_KEY = 'trnsl.1.1.20160621T155434Z.69d8c9c1b6f3b2bc.a8526274aab360e721d467fe83fb9d880a2ab793'
