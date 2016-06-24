@@ -1,0 +1,14 @@
+{% extends 'traduzione/layout.html' %}
+
+{% block content %}
+   <div class="collection">
+       {% for key, value in result.items %} 
+            <a href="#!" class="collection-item">{{ value }}<span class="badge">{{ key }}</span></a>
+       {% endfor %}
+    </div>
+    <a href="/">
+        <button class="btn waves-effect waves-light">Back
+            <i class="material-icons left">skip_previous</i>
+        </button>
+    </a>
+{% endblock content %}
